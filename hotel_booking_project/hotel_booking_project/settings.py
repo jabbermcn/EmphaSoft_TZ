@@ -13,7 +13,9 @@ import os
 from pathlib import Path
 
 from dotenv import load_dotenv
+
 load_dotenv()
+
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -44,6 +46,7 @@ INSTALLED_APPS = [
     'debug_toolbar',
     'django_filters',
     'rest_framework_simplejwt',
+    'django.contrib.postgres',
 ]
 
 REST_FRAMEWORK = {
@@ -97,13 +100,14 @@ DATABASES = {
         'USER': os.getenv('PG_USER'),
         'PASSWORD': os.getenv('PG_PASSWORD'),
         'HOST': os.getenv('DB_HOST'),
-        'POST': os.getenv('DB_PORT'),
+        'PORT': os.getenv('DB_PORT'),
     },
     'extra': {
         'ENGINE': 'django.db.backends.sqlite3',
         'NAME': BASE_DIR / 'db.sqlite3',
     },
 }
+
 
 # Password validation
 # https://docs.djangoproject.com/en/4.1/ref/settings/#auth-password-validators

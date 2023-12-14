@@ -17,5 +17,5 @@ RUN pip install --no-cache-dir -r requirements.txt
 # Скопируйте остальные файлы проекта в рабочую директорию
 COPY . .
 
-# Запустите Django сервер
-CMD ["python", "manage.py", "runserver", "0.0.0.0:8000"]
+# Запустите Django сервер и произведите миграции
+CMD ["sh", "-c", "python manage.py migrate && python manage.py runserver 0.0.0.0:8000"]

@@ -4,7 +4,9 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
-    command: python manage.py runserver 0.0.0.0:8000
+    container_name: emphasoft_tz
+    volumes:
+      - .:/hotel_booking_project
     ports:
       - "8000:8000"
     environment:
@@ -14,6 +16,7 @@ services:
 
   db:
     image: postgres
+    restart: always
     environment:
       POSTGRES_DB: ${PG_DATABASE}
       POSTGRES_USER: ${PG_USER}
@@ -23,3 +26,9 @@ services:
       - "5432:5432"
     volumes:
       - ./data/db:/var/lib/postgresql/data
+
+  adminer:
+    image: adminer
+    restart: always
+    ports:
+      - "8080:8080"
