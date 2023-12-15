@@ -1,46 +1,58 @@
-Проект "EmphaSoft_TZ"
-Запуск с использованием Docker
-Установите Docker Desktop.
+# EmphaSoft_TZ Application
 
-Запустите Docker и выполните следующие команды в терминале:
+## Запуск с использованием Docker
 
-bash
-Copy code
-docker-compose build
-docker-compose up -d
-Дождитесь завершения сборки проекта.
+Развертывание приложения с использованием Docker обеспечивает простоту и портативность. Следуйте шагам ниже:
 
-Перейдите на следующие страницы:
+1. Установите [Docker Desktop](https://www.docker.com/products/docker-desktop).
 
-Swagger API Documentation
-ReDoc API Documentation
-Запуск локально
-Клонируйте репозиторий:
+2. Запустите Docker и выполните следующие команды в терминале:
 
-bash
-Copy code
-git clone https://github.com/jabbermcn/EmphaSoft_TZ.git
-Перейдите в корневую директорию проекта (hotel_booking_project).
+    ```bash
+    docker-compose build
+    docker-compose up -d
+    ```
 
-Установите зависимости:
+3. Дождитесь успешного завершения сборки проекта.
 
-bash
-Copy code
-pip install -r requirements.txt
-Замените файл с переменными окружения (ENV) на свои данные.
+4. Перейдите по следующим ссылкам:
+    - [Swagger API Documentation](http://127.0.0.1:8000/swagger/)
+    - [ReDoc API Documentation](http://127.0.0.1:8000/redoc/)
 
-Создайте миграции:
+## Запуск локально
 
-bash
-Copy code
-python manage.py makemigrations
-Примените миграции:
+Для запуска приложения локально, выполните следующие шаги:
 
-bash
-Copy code
-python manage.py migrate
-Перейдите на следующие страницы:
+1. Клонируйте репозиторий:
 
-Swagger API Documentation
-ReDoc API Documentation
-Примечание: Перед использованием убедитесь, что порт 8000 доступен и не занят другим процессом.
+    ```bash
+    git clone https://github.com/jabbermcn/EmphaSoft_TZ.git
+    ```
+
+2. Перейдите в корневую директорию проекта (`hotel_booking_project`).
+
+3. Установите зависимости:
+
+    ```bash
+    pip install -r requirements.txt
+    ```
+
+4. Замените файл с переменными окружения (ENV) на свои данные.
+
+5. Создайте миграции:
+
+    ```bash
+    python manage.py makemigrations
+    ```
+
+6. Примените миграции:
+
+    ```bash
+    python manage.py migrate
+    ```
+
+7. Посетите следующие страницы:
+    - [Swagger API Documentation](http://127.0.0.1:8000/swagger/)
+    - [ReDoc API Documentation](http://127.0.0.1:8000/redoc/)
+
+**Примечание:** Перед использованием убедитесь, что порт 8000 доступен и не занят другим процессом.
