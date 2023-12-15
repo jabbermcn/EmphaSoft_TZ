@@ -16,11 +16,13 @@
 3. Дождитесь успешного завершения сборки проекта.
 
 ![Пример успешного запуска контейнеров](https://i.postimg.cc/Njx1Cc10/2023-12-14-21-24-45.png)
-[![2023-12-14-21-24-45.png](https://i.postimg.cc/Njx1Cc10/2023-12-14-21-24-45.png)](https://postimg.cc/zyVb342m)
 
 4. Перейдите по следующим ссылкам:
     - [Swagger API Documentation](http://127.0.0.1:8000/swagger/)
     - [ReDoc API Documentation](http://127.0.0.1:8000/redoc/)
+    - [Web database](http://127.0.0.1:8080/)
+![Отображение бд в браузере](https://i.postimg.cc/kgMqbDN9/2023-12-14-21-23-57.png)
+
 
 ## Запуск локально
 
