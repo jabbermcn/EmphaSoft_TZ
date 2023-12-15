@@ -3,8 +3,11 @@ from unittest.mock import patch
 
 from django.test import TestCase
 from rest_framework import status
+from rest_framework.exceptions import ValidationError
 from rest_framework.test import APIClient
 from django.contrib.auth.models import User
+
+from room.filters import RoomFilter
 from room.models import Room
 from .models import Booking
 

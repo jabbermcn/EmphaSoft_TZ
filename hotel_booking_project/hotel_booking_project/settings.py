@@ -47,6 +47,7 @@ INSTALLED_APPS = [
     'django_filters',
     'rest_framework_simplejwt',
     'django.contrib.postgres',
+    'django_extensions',
 ]
 
 REST_FRAMEWORK = {

@@ -1,7 +1,6 @@
 from datetime import datetime
 from typing import Any
 
-from django.core.exceptions import ObjectDoesNotExist
 from django.shortcuts import get_object_or_404
 from rest_framework import viewsets, status
 from rest_framework.decorators import action
@@ -64,7 +63,7 @@ class BookingViewSet(viewsets.ModelViewSet):
             )
             return Response({'message': 'Room reserved successfully.'}, status=status.HTTP_201_CREATED)
 
-        except ObjectDoesNotExist:
+        except Room.DoesNotExist:
             return Response({'message': 'Room not found.'}, status=status.HTTP_404_NOT_FOUND)
 
     def destroy(self, request: Request, *args: Any, **kwargs: Any) -> Response:
