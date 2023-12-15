@@ -15,6 +15,8 @@
 
 3. Дождитесь успешного завершения сборки проекта.
 
+![Пример успешного запуска контейнеров](https://ibb.co/C1MyctR)
+
 4. Перейдите по следующим ссылкам:
     - [Swagger API Documentation](http://127.0.0.1:8000/swagger/)
     - [ReDoc API Documentation](http://127.0.0.1:8000/redoc/)
