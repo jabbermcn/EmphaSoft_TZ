@@ -1,28 +1,46 @@
-Запуск(docker)
-Реализовано развертывание приложения с помощью докера, для этого небходимо установить docker desktop и запустить его.
-После запуска докера прописать
+Проект "EmphaSoft_TZ"
+Запуск с использованием Docker
+Установите Docker Desktop.
+
+Запустите Docker и выполните следующие команды в терминале:
+
+bash
+Copy code
 docker-compose build
-
-Дождаться билда проекта и прописать
 docker-compose up -d
+Дождитесь завершения сборки проекта.
 
-Перейти на страницу
-http://127.0.0.1:8000/swagger/
-http://127.0.0.1:8000/redoc/
+Перейдите на следующие страницы:
 
-Запуск (локально)
-Клонировать репозиторий https://github.com/jabbermcn/EmphaSoft_TZ.git
-Из корневой директории (hotel_booking_project) установить зависимости
+Swagger API Documentation
+ReDoc API Documentation
+Запуск локально
+Клонируйте репозиторий:
+
+bash
+Copy code
+git clone https://github.com/jabbermcn/EmphaSoft_TZ.git
+Перейдите в корневую директорию проекта (hotel_booking_project).
+
+Установите зависимости:
+
+bash
+Copy code
 pip install -r requirements.txt
+Замените файл с переменными окружения (ENV) на свои данные.
 
-Поменять ENV файл на свои данные
+Создайте миграции:
 
-Создать миграции
+bash
+Copy code
 python manage.py makemigrations
+Примените миграции:
 
-Мигрировать
+bash
+Copy code
 python manage.py migrate
+Перейдите на следующие страницы:
 
-Перейти на страницу
-http://127.0.0.1:8000/swagger/
-http://127.0.0.1:8000/redoc/
+Swagger API Documentation
+ReDoc API Documentation
+Примечание: Перед использованием убедитесь, что порт 8000 доступен и не занят другим процессом.
