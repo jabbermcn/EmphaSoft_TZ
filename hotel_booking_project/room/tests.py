@@ -2,7 +2,6 @@ from datetime import date
 
 from django.contrib.auth.models import User
 from django.test import TestCase
-from rest_framework.exceptions import ValidationError
 
 from booking.models import Booking
 from .models import Room
@@ -21,30 +20,12 @@ class RoomFilterTests(TestCase):
         self.assertIn(self.room1, filtered_rooms)
         self.assertIn(self.room2, filtered_rooms)
 
-    # def test_invalid_capacity_range(self):
-    #     filter = RoomFilter(data={'capacity_range': '4:2'})
-    #     with self.assertRaises(ValidationError) as error:
-    #         filter.qs
-    #     self.assertEqual(
-    #         str(error.exception),
-    #         "Validation error(s): {'range':['Capacity min cannot be greater than capacity max.']}"
-    #     )
-
     def test_price_range_filter(self):
         filter = RoomFilter(data={'price_range': '100:150'})
         filtered_rooms = filter.qs
         self.assertEqual(filtered_rooms.count(), 2)
         self.assertIn(self.room1, filtered_rooms)
         self.assertIn(self.room2, filtered_rooms)
-
-    # def test_invalid_price_range(self):
-    #     filter = RoomFilter(data={'price_range': '150:100'})
-    #     with self.assertRaises(ValidationError) as error:
-    #         filter.qs
-    #     self.assertEqual(
-    #         str(error.exception),
-    #         "Validation error(s): {'range':['Price min cannot be greater than price max.']}"
-    #     )
 
     def test_available_dates_filter(self):
         user = User.objects.create(username='test_user', password='password')
@@ -57,21 +38,3 @@ class RoomFilterTests(TestCase):
         filtered_rooms = filter.qs
         self.assertEqual(filtered_rooms.count(), 2)
         self.assertIn(self.room2, filtered_rooms)
-
-    # def test_invalid_single_date(self):
-    #     filter = RoomFilter(data={'available': '2023-12-18'})
-    #     with self.assertRaises(ValidationError) as error:
-    #         filter.qs
-    #     self.assertEqual(
-    #         str(error.exception),
-    #         "Validation error(s): {'detail': 'available_before and available_after has to be specified.'}"
-    #     )
-
-    # def test_invalid_same_dates(self):
-    #     filter = RoomFilter(data={'available': '2023-12-18:2023-12-18'})
-    #     with self.assertRaises(ValidationError) as error:
-    #         filter.qs
-    #     self.assertEqual(
-    #         str(error.exception),
-    #         "Validation error(s): {'detail': 'available_before and available_after has to differ.'}"
-    #     )

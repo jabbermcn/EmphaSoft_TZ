@@ -60,6 +60,7 @@ class BookingViewSet(viewsets.ModelViewSet):
                 room=room,
                 check_in_date=check_in_date,
                 check_out_date=check_out_date,
+                is_cancelled=False,
             )
             return Response({'message': 'Room reserved successfully.'}, status=status.HTTP_201_CREATED)
 
@@ -87,3 +88,5 @@ class BookingViewSet(viewsets.ModelViewSet):
         bookings = self.get_queryset().filter(user=request.user)
         serializer = self.get_serializer(bookings, many=True)
         return Response(serializer.data)
+
+

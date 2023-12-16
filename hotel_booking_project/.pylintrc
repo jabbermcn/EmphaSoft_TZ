@@ -1,23 +1,12 @@
 [MASTER]
-# Добавьте ваши модули Django, чтобы pylint знал о них
-init-hook='import sys; sys.path.append("hotel_booking_project")'
-
-[MESSAGES CONTROL]
-# Игнорировать некоторые часто встречающиеся в Django предупреждения
-disable=missing-docstring,invalid-name,too-few-public-methods
-
-[BASIC]
-# Добавить модели Django в разрешенные имена
-good-names=i,j,k,_i,_j,_k
-
-[FORMAT]
-# Отключить требование docstring перед определением класса или функции
-docstring-min-length=-1
+extension-pkg-whitelist=django
 
 [TYPECHECK]
-# Включить поддержку аннотаций типов (требует Python 3.5+)
-load-plugins=pylint_django
 
 [REPORTS]
-# Добавить возможность вывода рекомендаций по улучшению кода
-output-format=colorized
+output-format=text
+
+[MESSAGES CONTROL]
+enable=E1101
+disable=C0103, R0903
+
